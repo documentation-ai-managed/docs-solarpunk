@@ -1,0 +1,119 @@
+---
+title: Introduction to Solarpunk
+description: Discover Solarpunk, a platform for agentic LLMs that automate decision-making and actions like your best team members, with local-first processing and seamless orchestration.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## What is Solarpunk?
+
+Solarpunk empowers you to deploy agentic LLMs that think, act, and decide like your top performers. You map user interactions into repeatable actions while keeping data local on your device—no model training required. With stateful memory and LLM orchestration, you eliminate AI fatigue and ship faster.
+
+Solarpunk runs local models alongside your API keys, ensuring privacy and control. Integrate it into your workflows to automate complex decisions without cloud dependencies.
+
+<Image
+  src="https://solarpunk.technology/assets/raw-video-hero-loop-bahaus-ChCzmsCn.gif"
+  alt="Solarpunk hero illustration of future ecosystem"
+  width="800"
+  height="450"
+  priority={true}
+/>
+
+## Key Features
+
+<Columns cols={3}>
+  <Card title="Local-First Processing" icon="shield" href="#local-first">
+    Your data stays on device. Run models locally with your own keys for maximum privacy.
+  </Card>
+  <Card title="Agentic Automation" icon="zap" href="#automation">
+    Capture clicks, keys, and context to create safe, repeatable actions like the top 1%.
+  </Card>
+  <Card title="No AI Fatigue" icon="brain" href="#no-fatigue">
+    Stateful memory and orchestration keep conversations efficient—no repetitive prompts.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get started with Solarpunk in minutes.
+
+<Steps>
+  <Step title="Install Solarpunk" icon="download">
+    Install via npm for quick setup.
+
+    <CodeGroup tabs="npm,yarn">
+      ````bash
+      npm install solarpunk
+      ````
+
+      ````bash
+      yarn add solarpunk
+      ````
+    </CodeGroup>
+  </Step>
+
+  <Step title="Initialize Agent" icon="settings">
+    Create your first agent with a simple configuration.
+
+    ````javascript
+    import { createAgent } from 'solarpunk';
+
+    const agent = createAgent({
+      model: 'local-llm',
+      apiKey: 'YOUR_API_KEY'
+    });
+    ````
+  </Step>
+
+  <Step title="Run Your First Task" icon="play">
+    Execute a task and observe automation.
+
+    ````javascript
+    const result = await agent.run('Analyze sales data and suggest actions');
+    console.log(result);
+    ````
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Replace `YOUR_API_KEY` with your provider key. Test locally first.
+</Callout>
+
+## Primary Use Cases
+
+<Tabs>
+  <Tab title="Decision Automation" icon="cpu">
+    Automate routine decisions in trading, operations, or customer support using context-aware agents.
+  </Tab>
+  <Tab title="Workflow Orchestration" icon="git-branch">
+    Chain LLMs for complex tasks like data analysis followed by report generation.
+  </Tab>
+  <Tab title="UI Pattern Capture" icon="mouse-pointer">
+    Map user interactions into bots that handle repetitive interface tasks.
+  </Tab>
+</Tabs>
+
+## Next Steps and Resources
+
+Explore deeper with these guides:
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="book-open" href="/quickstart">
+    Build your first agent end-to-end.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your API keys and local models.
+  </Card>
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize agents for your workflows.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated with latest releases.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+  Ready to automate? Head to the [Quickstart](/quickstart) to launch your first agent.
+</Callout>

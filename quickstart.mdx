@@ -1,0 +1,168 @@
+---
+title: Quickstart Guide
+description: Get started with Solarpunk by creating an account, setting up your environment, and launching your first agentic workflow in under 5 minutes.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Before You Begin">
+To complete this quickstart, ensure you have:
+- A modern web browser (Chrome, Firefox, or Safari)
+- Node.js `{>=18.0.0}` installed
+- A free account on the Solarpunk dashboard
+- Terminal or command prompt access
+</Callout>
+
+## Create Your Account and Access Dashboard
+
+Follow these steps to register and log in to your Solarpunk dashboard.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://dashboard.example.com/signup` and create your account using your email.
+    
+    No credit card required for the free tier.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification email from Solarpunk and click the link.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to `https://dashboard.example.com/login`, enter your credentials, and access the Ubik dashboard.
+  </Step>
+</Steps>
+
+<Image
+  src="https://solarpunk.technology/assets/ubik%20trade%20snap-B7y-50Yt.png"
+  alt="Ubik planning and execution dashboard in Solarpunk"
+  width={1200}
+  height={800}
+/>
+
+## Set Up Your Local Environment
+
+Install the Solarpunk CLI and configure your API key across platforms.
+
+<Tabs>
+  <Tab title="macOS" icon="apple">
+    
+    Use Homebrew to install the CLI.
+    
+````bash
+brew install solarpunk/tap/solarpunk-cli
+````
+    
+    Configure your API key:
+    
+````bash
+solarpunk config set api-key YOUR_API_KEY
+````
+  </Tab>
+  <Tab title="Windows" icon="monitor">
+    
+    Use winget for installation.
+    
+````powershell
+winget install Solarpunk.CLI
+````
+    
+    Set your API key:
+    
+````powershell
+solarpunk config:set api-key YOUR_API_KEY
+````
+  </Tab>
+  <Tab title="Linux" icon="linux">
+    
+    Download and install via curl.
+    
+````bash
+curl -sSL https://get.solarpunk.technology | bash
+````
+    
+    Configure:
+    
+````bash
+solarpunk config set api-key YOUR_API_KEY
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Obtain your API key from the dashboard under **Account > API Keys**. Replace `YOUR_API_KEY` with the actual value.
+</Callout>
+
+## Launch Your First Agentic Workflow
+
+Create and run a simple agent that analyzes market data.
+
+<Steps>
+  <Step title="Create Agent Config" icon="file-plus">
+    Create a `agent.yaml` file:
+    
+````yaml
+name: market-analyzer
+model: gpt-4o-mini
+tools:
+  - web-search
+prompt: Analyze solar energy trends for 2024.
+````
+  </Step>
+  <Step title="Run the Agent" icon="play">
+    
+    Execute in your terminal:
+    
+````bash
+solarpunk agent run agent.yaml
+````
+    
+    Monitor progress in the Ubik dashboard at `https://dashboard.example.com/agents`.
+  </Step>
+  <Step title="View Results" icon="eye">
+    Check the analytics tab for decisions, actions, and proofs.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Example API call for agent execution
+const response = await fetch('https://api.example.com/v1/agents/run', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` },
+  body: JSON.stringify({ config: agentConfig })
+});
+```
+```python
+import requests
+
+response = requests.post(
+  'https://api.example.com/v1/agents/run',
+  headers={'Authorization': f'Bearer {YOUR_API_KEY}'},
+  json={'config': agent_config}
+)
+```
+</CodeGroup>
+
+<Image
+  src="https://solarpunk.technology/assets/ubik%20inbox%20snap-DvBhXXIY.png"
+  alt="Ubik analytics and proof verification interface"
+  width={1200}
+  height={800}
+/>
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API access with advanced auth methods.
+  </Card>
+  <Card title="Advanced Agents" icon="cpu" href="/introduction">
+    Build complex agentic workflows.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/changelog">
+    Connect with external tools and APIs.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+Congratulations! You've launched your first Solarpunk agent. Explore the dashboard for more features like stateful memory and local model support.
+</Callout>

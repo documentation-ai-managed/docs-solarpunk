@@ -1,0 +1,146 @@
+---
+title: Changelog
+description: Review the release history of Solarpunk, highlighting new features, improvements, and fixes across recent versions.
+---
+
+## Latest Updates
+
+<Callout kind="info" title="Stay Current">
+Check for updates regularly to access the latest agentic LLM capabilities in Solarpunk. Use the dashboard at `https://dashboard.example.com` to view release notes and auto-update options.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v120">
+    Enhanced local model support and UI improvements.
+  </Card>
+  <Card title="v1.1.0" icon="trending-up" href="#v110">
+    Added stateful memory and orchestration features.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v100">
+    Initial release with core Ubik dashboard.
+  </Card>
+</Columns>
+
+## v1.2.0 (2024-10-15)
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom local models via on-device inference.
+- Introduced real-time analytics dashboard for action verification.
+
+## Improvements
+
+- Optimized context engineering for 30% faster prompt processing.
+- Enhanced UI with Solarpunk Bauhaus-inspired themes.
+
+## Bug Fixes
+
+- Fixed intermittent webhook failures in integration flows.
+- Resolved memory leaks during long-running agent sessions.
+
+</Update>
+
+## v1.1.0 (2024-09-20)
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Implemented stateful memory for persistent agent conversations.
+- Added LLM orchestration layer for multi-model workflows.
+
+## Improvements
+
+- Improved screen context capture accuracy for pattern recognition.
+- Streamlined API key management in the settings panel.
+
+## Bug Fixes
+
+- Corrected dashboard refresh issues on mobile devices.
+- Patched security vulnerability in local data storage.
+
+</Update>
+
+## v1.0.0 (2024-08-10)
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched Ubik dashboard for planning, execution, and verification.
+- Enabled local-first execution with no cloud model training required.
+
+## Breaking Changes
+
+- Updated configuration format from JSON to YAML for better readability.
+
+## Initial Setup
+
+- Core agentic LLM functionality for decision automation.
+- Basic integrations with common tools and APIs.
+
+</Update>
+
+## Upgrading Solarpunk
+
+Follow these steps to upgrade to the latest version safely.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your configurations and agent states from the dashboard.
+
+    <CodeGroup tabs="CLI,Dashboard">
+    ````bash
+    solarpunk export --backup ./my-backup
+    ````
+    ````bash
+    # Use dashboard UI: Settings > Export
+    ````
+    </CodeGroup>
+  </Step>
+
+  <Step title="Download Update" icon="download">
+    Fetch the latest release from your account.
+
+    ````bash
+    solarpunk update --version latest
+    ````
+  </Step>
+
+  <Step title="Verify Migration" icon="check-circle">
+    Run migration checks and review changelogs.
+
+    <Callout kind="tip">
+      For v1.2.0, update your `{config.yaml}` file to the new schema.
+    </Callout>
+  </Step>
+
+  <Step title="Restart Services" icon="refresh-cw">
+    Restart Ubik agents to apply changes.
+
+    ````bash
+    solarpunk restart --all
+    ````
+  </Step>
+</Steps>
+
+<Expandable title="Migration Notes for Breaking Changes" default-open="false">
+
+If upgrading from v0.x, migrate your config files manually:
+
+```yaml
+# Old format (JSON-like)
+agents:
+  - name: "ubik"
+
+# New YAML format (v1.0.0+)
+agents:
+  - name: ubik
+    model: local-llm
+```
+
+Review full migration guide in the [dashboard](https://dashboard.example.com/migrations).
+
+</Expandable>

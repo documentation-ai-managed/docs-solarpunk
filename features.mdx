@@ -1,0 +1,142 @@
+---
+title: Core Features
+description: Explore Solarpunk's essential capabilities, including planning dashboards, local execution, and AI orchestration to reduce decision fatigue.
+---
+
+## Overview
+
+Solarpunk delivers agentic LLMs through Ubik, empowering you to automate complex workflows with tools that mimic top performers. You gain planning dashboards for execution oversight, local-first processing to keep data private, stateful memory for persistent context, and analytics for verification. These features eliminate decision fatigue by handling repetitive tasks intelligently.
+
+<Image
+  src="https://solarpunk.technology/assets/raw-video-hero-loop-bahaus-ChCzmsCn.gif"
+  alt="Solarpunk hero animation showing future food ecosystem in bauhaus style"
+  width="800"
+  height="450"
+  priority={true}
+/>
+
+<Columns cols={2}>
+  <Card title="Ubik Planning & Execution" icon="zap" href="#ubik-planning">
+    Visualize and control agent actions in real-time dashboards.
+  </Card>
+  <Card title="Local-First Processing" icon="shield" href="#local-first">
+    Process data on-device with your own models and keys.
+  </Card>
+  <Card title="Stateful Memory Management" icon="database" href="#stateful-memory">
+    Maintain context across sessions without prompt fatigue.
+  </Card>
+  <Card title="Analytics & Verification" icon="bar-chart" href="#analytics">
+    Track performance and verify outcomes with proof tools.
+  </Card>
+</Columns>
+
+## Ubik Planning and Execution
+
+Ubik provides intuitive dashboards where you monitor agent planning, execution, and decisions. Map user interactions like clicks and keys into repeatable actions, ensuring safe automation.
+
+<Image
+  src="https://solarpunk.technology/assets/ubik%20trade%20snap-B7y-50Yt.png"
+  alt="Ubik planning and execution dashboard interface"
+  width="800"
+  height="500"
+/>
+
+<Callout kind="tip">
+  Start with the dashboard at `https://dashboard.example.com` to review agent traces.
+</Callout>
+
+<Steps>
+  <Step title="Connect Your Tools" icon="plug">
+    Integrate your local tools via the SDK.
+  </Step>
+  <Step title="Map Patterns" icon="mouse-pointer">
+    Record interactions to build action libraries.
+  </Step>
+  <Step title="Deploy Agents" icon="rocket">
+    Launch workflows and monitor in the dashboard.
+  </Step>
+</Steps>
+
+## Local-First Data Processing
+
+Keep your data secure with on-device processing. Ubik runs local models alongside your API keys, avoiding cloud training or data leaks.
+
+<CodeGroup tabs="Node.js,Python">
+  ```javascript
+  const { UbikAgent } = require('@solarpunk/ubik');
+
+  const agent = new UbikAgent({
+    model: 'local-llama3',
+    apiKey: 'YOUR_API_KEY',
+    localOnly: true
+  });
+
+  agent.processLocalData({ input: 'user clicks' });
+  ```
+  ```python
+  from ubik import UbikAgent
+
+  agent = UbikAgent(
+      model="local-llama3",
+      api_key="YOUR_API_KEY",
+      local_only=True
+  )
+
+  agent.process_local_data(input_data="user clicks")
+  ```
+</CodeGroup>
+
+## Stateful Memory Management
+
+Eliminate AI fatigue with persistent memory. Ubik orchestrates LLMs, engineers context, and maintains state across interactions.
+
+<Tabs>
+  <Tab title="Basic Usage" icon="memory">
+    Initialize stateful sessions for ongoing tasks.
+  </Tab>
+  <Tab title="Advanced Orchestration" icon="settings">
+    Chain multiple agents with shared memory.
+  </Tab>
+</Tabs>
+
+```javascript
+const session = agent.createSession('project-planning');
+session.addContext('Previous decisions: approve budget');
+const decision = await session.decide('Next step?');
+```
+
+## Analytics and Verification Tools
+
+Verify agent outputs with analytics dashboards. Track metrics, review proofs, and ensure actions align with your goals.
+
+<Image
+  src="https://solarpunk.technology/assets/ubik%20inbox%20snap-DvBhXXIY.png"
+  alt="Ubik analytics and proof verification interface"
+  width="800"
+  height="500"
+/>
+
+<Expandable title="Integration Architecture" default-open="false">
+  Review system flows in the operations view.
+
+  ```mermaid
+  graph TD
+      A[User Input] --> B[Ubik Agent]
+      B --> C[Local Model]
+      C --> D[Memory Store]
+      D --> E[Analytics Dashboard]
+      E --> F[Verification]
+  ```
+</Expandable>
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Set up Ubik in minutes.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your agents.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Latest updates.
+  </Card>
+</Columns>
